@@ -10,7 +10,7 @@ class Docker implements Serializable {
     }
 
     def login() {
-        script.sh "Logging in Docker"
+        script.notif "Logging in Docker"
         script.withCredentials(
                 [script.usernamePassword(
                         credentialsId: 'nexus-docker',
@@ -33,5 +33,9 @@ class Docker implements Serializable {
         script.sh "Pushing Image to repository"
         script.sh "docker push $imageName"
         script.sh "Image pushed to repository"
+    }
+
+    def logOut() {
+        script.sh 'docker logout'
     }
 }

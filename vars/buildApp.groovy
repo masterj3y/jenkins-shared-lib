@@ -2,6 +2,7 @@
 
 def call(String message) {
     loadBashScript name: "telnotif.sh"
-    sh "./telnotif.sh $TEL_NOTIFIER_TOKEN $TEL_NOTIF_RECEIVER ${message}"
+    def sendNotifCmd = './telnotif.sh $TEL_NOTIFIER_TOKEN $TEL_NOTIF_RECEIVER ' + "$message"
+    sh sendNotifCmd
     sh 'cargo build --release'
 }

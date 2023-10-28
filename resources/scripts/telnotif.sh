@@ -7,7 +7,7 @@ message=$3
 curl --fail -X POST \
 	-H 'Content-Type: application/json' \
 	-d '{ "chat_id": "'$chat_id'", "text": "'$message'"}' \
-	https://api.telegram.org/bot$token/sendMessage > /dev/null 2>&1
+	https://api.telegram.org/bot$token/sendMessage
 
 if [ $? -eq 0 ]; then
 	echo "notif has been sent successfully"

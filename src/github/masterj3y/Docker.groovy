@@ -24,18 +24,19 @@ class Docker implements Serializable {
     }
 
     def buildImage(String imageName) {
-        script.sh "Building Image"
+        script.notif "Building Image"
         script.sh "docker build -t $imageName ."
-        script.sh "Image has been built"
+        script.notif "Image has been built"
     }
 
     def pushImage(String imageName) {
-        script.sh "Pushing Image to repository"
+        script.notif "Pushing Image to repository"
         script.sh "docker push $imageName"
-        script.sh "Image pushed to repository"
+        script.notif "Image pushed to repository"
     }
 
     def logOut() {
         script.sh 'docker logout'
+        script.notif 'Logged out of Docker'
     }
 }

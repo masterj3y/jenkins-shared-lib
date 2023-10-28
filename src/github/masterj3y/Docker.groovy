@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+package github.masterj3y
 
 class Docker implements Serializable {
 

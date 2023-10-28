@@ -1,3 +1,5 @@
+import github.masterj3y.Docker
+
 def call(String imageName) {
     def docker = new Docker(this)
     docker.login()

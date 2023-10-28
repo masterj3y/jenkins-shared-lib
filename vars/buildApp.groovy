@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(String message) {
+def call() {
     notif "Building App"
     sh 'cargo build --release'
 }

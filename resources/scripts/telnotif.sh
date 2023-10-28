@@ -6,7 +6,7 @@ message=$3
 
 curl --fail -X POST \
 	-H 'Content-Type: application/json' \
-	-d '{ "chat_id": "'$chat_id'", "text": "'$message'"}' \
+	-d '{ "chat_id": "'$chat_id'", "text": "'"$message"'" }' \
 	https://api.telegram.org/bot$token/sendMessage > /dev/null 2>&1
 
 if [ $? -eq 0 ]; then
